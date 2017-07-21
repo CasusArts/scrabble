@@ -12,6 +12,7 @@ class Scrabble
     @points = 0
   end
 
+  # TODO: Impliment check for nil and false. if nil or false -> output: 0
   def score(word)
     word.each_char do |c|
       @score_chars.each do |k, v|
@@ -20,15 +21,7 @@ class Scrabble
         end
       end
     end
-    @points
+    puts @points
   end
 
 end
-
-game = Scrabble.new
-
-print "Give me some word: "
-word = gets.chomp
-word.downcase!
-
-puts game.score(word)
